@@ -1,0 +1,422 @@
+/****************************************
+Making Variables
+*****************************************/
+:root {
+    --decorative: rgb(219, 240, 30); /*decorative yellow color*/
+    --maincolor: rgb(91, 45, 104); /*main backround color*/
+    --margin: 0.5rem 0.5rem; /*common margin size*/
+}
+
+
+/****************************************
+Form  Styles
+*****************************************/
+form {
+    background-color: rgb(215, 181, 216);
+    color: var(--maincolor);
+    border-radius: 1em;
+    border-left: 0.5rem solid var(--decorative);
+    list-style: none;
+    padding: 1rem 1rem;
+    width: fit-content;
+    font-size: 1rem;
+}
+
+/****************************************
+Grid Style For Body
+*****************************************/
+header {
+    grid-area: header;
+    border-bottom: 0.2rem solid var(--decorative);
+}
+
+nav {
+    grid-area: nav;
+}
+
+main {
+    grid-area: main;
+    margin: 1rem 2rem;
+}
+
+footer {
+    grid-area: footer;
+    border-top: 0.2rem solid var(--decorative);
+}
+
+body {
+    display: grid;
+    grid-template-areas:
+        'header header header header header header'
+        'nav main main main main main'
+        'footer footer footer footer footer footer';
+    gap: 10px;
+    background-color: var(--maincolor, rgb(91, 45, 104)); /*fall back to original color*/
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: white;
+}
+
+/****************************************
+Header Styles
+*****************************************/
+/* make h1 (VidFlix) beside page icon */
+header h1 {
+    display: inline;
+    font-size: 2.5rem;
+}
+
+/* Make h2 (Personal Video Collection) italic*/
+header h2 {
+    font-style: italic;
+    font-size: 1.5rem;
+    margin: 0.05rem;
+}
+
+/* making icon bigger */
+header i {
+    font-size: 2rem;
+}
+
+/****************************************
+Styling Nav 
+*****************************************/
+/* making links in nav white with no underline */
+nav a {
+    color: white;
+    text-decoration: none;
+    list-style: none;
+    font-size: 1rem;
+}
+
+/* hovering over links makes it yellow */
+a:hover {
+    color: var(--decorative);
+}
+
+nav h3 {
+    font-size: 1.2rem;
+}
+
+/* making a yellow border tghe left of lists */
+ul {
+    border-left: 0.2rem solid var(--decorative);
+    list-style: none;
+}
+
+/* adding spacing on list elements */
+li {
+    margin: 1.5rem -1.5rem;
+}
+
+nav button{
+    width: 0rem;
+    background-color: var(--maincolor);
+    padding: 0rem;
+    margin: 0rem 3rem;
+    color: white;
+}
+
+nav button:hover{
+    color:yellow;
+}
+
+nav button.hidden{
+    display: none;
+}
+/****************************************
+Button  Styles
+*****************************************/
+button {
+    width: 40rem;
+    background-color: rgb(228, 234, 174);
+    padding: 1rem 1rem;
+    margin:  var(--margin);
+    border: none;
+    cursor: pointer;  /* make cursor a pointer for buttons */
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; /*make buttons match the font as the rest of the page*/
+    font-size: 1.2rem;
+}
+
+button:hover {
+    background-color: var(--decorative);
+}
+
+
+/****************************************
+Font-Awesome Icons Styles
+*****************************************/
+/* make main icons yellow and spaced */
+main i {
+    color: var(--decorative);
+    margin:  1rem 0.05rem 1rem 0.5rem;
+    font-size: 1.2rem;
+}
+
+/* when icons are hovered make white */
+main i:hover, #search .movies i:hover {
+    color: white;
+}
+
+/* make sure icons that arnt supposed to change colors when hovered dont */
+form i, form i:hover {
+    color:var(--maincolor);
+}
+
+.details i:hover, p i, p i:hover {
+    color: var(--decorative);
+}
+
+/* Styling error message on login form */
+p {
+    background-color: rgb(46, 21, 59);
+    color: var(--decorative);
+    border-radius: 0.2rem;
+    padding: 0.2rem 0.2rem;
+}
+/****************************************
+Form Input Styles
+*****************************************/
+/* styling input boxes */
+input[type="email"], input[type="password"], #username, #firstname, #lastname, #find{
+    width: 40rem;
+    padding: 1rem 1rem;
+    background-color: rgb(246, 235, 253);
+    margin: var(--margin);
+    display: block;
+    border: none;
+    box-sizing: border-box;
+}
+
+#max{
+    background-color: rgb(246, 235, 253);
+    margin: var(--margin);
+    border: none;
+}
+
+/* centering text on register.html, details page and footer */
+#registration h1, #registration h2, .details h2, .details h1, footer {
+    text-align: center;
+}
+
+/* styling labels for all inputs */
+label {
+    font-size: 1.2rem;
+    margin-left: 0.5rem;
+}
+
+/* styling inputs addvideo form to be a line instead of a box  */
+#actors,
+#title,
+#year,
+#streaming,
+#release,
+#runtime,
+#MPAA,
+#coverlink,
+#imgupload,
+#studio {
+    background: transparent;
+    border: none;
+    border-bottom: 0.1rem solid var(--maincolor);
+    display: block;
+    width: 25rem;
+    margin: var(--margin);
+}
+
+/* setting widths to the rest of the input types on addvideo form */
+#title,
+#actors,
+#coverlink,
+#imgupload{
+    width: 51.06rem;
+    margin: var(--margin);
+}
+
+/* styling textarea on addvideo form */
+#summary {
+    display: block;
+    background-color: rgb(246, 235, 253);
+    width: 43rem;
+}
+
+/****************************************
+Styling Add Video Form
+*****************************************/
+/* putting the middles inputs side by side */
+.grid {
+    display: flex;
+    flex-direction: row;
+}
+
+fieldset {
+    border-color: var(--decorative);
+    width: fit-content;
+}
+
+input[type=radio], fieldset {
+    margin: var(--margin);
+}
+/****************************************
+Styling The Previous and Next Buttons
+*****************************************/
+/* making previous and next boxes and seperating them */
+.traverse a
+{
+    background-color: rgb(46, 21, 59);
+    color: white;
+    border-radius: 0.5rem;
+    text-decoration: none;
+    display: inline-block;
+    margin: 1rem 12rem;
+    padding: 1rem 1rem;
+}
+
+/* making previous and next link white when hovered over */
+.traverse a:hover
+{
+    background-color: white;
+    color: rgb(46, 21, 59);
+}
+
+/****************************************
+Styling Movie Details
+*****************************************/
+/* making image and information side by side */
+.details {
+    display: flex;
+    flex-direction: row;
+    font-size: 1rem;
+}
+
+/* putting space between the cover photo and information */
+.details > div:nth-child(2)
+{
+    margin: 1rem 5rem;
+}
+
+/* putting pace between the information */
+.details > div:nth-child(2) div
+{
+    margin: 1rem;
+}
+
+.details a{
+    background-color: var(--decorative);
+    text-decoration: none;
+    color: rgb(46, 21, 59);
+    border-radius: 0.2rem;
+    padding: 0.2rem 0.2rem;
+}
+
+.details a:hover {
+    background-color: rgb(46, 21, 59);
+    color: var(--decorative);
+}
+
+.details a.hidden {
+    display: none; /* make it disappear */
+  }
+/****************************************
+Styling Movie Layout
+*****************************************/
+ /* making movies into a grid format */
+.movies{
+    display: flex;
+    flex-flow: row wrap;
+    gap: 3rem;
+    text-align: center
+
+}
+
+/****************************************************************************************************************
+Styling Star Rating (from assignment description https://dev.to/madsstoumann/star-rating-using-a-single-input-i0l)
+*****************************************************************************************************************/
+.rating {
+    --dir: right;
+    --fill: gold;
+    --fillbg: rgba(100, 100, 100, 0.15);
+    --star: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 17.25l-6.188 3.75 1.641-7.031-5.438-4.734 7.172-0.609 2.813-6.609 2.813 6.609 7.172 0.609-5.438 4.734 1.641 7.031z"/></svg>');
+    --stars: 5;
+    --starsize: 3rem;
+    --symbol: var(--star);
+    --value: 1;
+    --w: calc(var(--stars) * var(--starsize));
+    --x: calc(100% * (var(--value) / var(--stars)));
+    block-size: var(--starsize);
+    inline-size: var(--w);
+    position: relative;
+    touch-action: manipulation;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-color: rgb(215, 181, 216);
+  }
+  [dir="rtl"] .rating {
+    --dir: left;
+  }
+  /* for most browsers */
+  .rating::-webkit-slider-runnable-track {
+    background: linear-gradient(to var(--dir), var(--fill) 0 var(--x), var(--fillbg) 0 var(--x));
+    block-size: 100%;
+    mask:initial;
+    -webkit-mask: repeat left center/var(--starsize) var(--symbol);
+  }
+  .rating::-webkit-slider-thumb {
+    height: var(--starsize);
+    opacity: 0;
+    width: var(--starsize);
+    -webkit-appearance: none;
+  }
+
+  /* for Firefox */
+  .rating::-moz-slider-runnable-track {
+    background: linear-gradient(to var(--dir), var(--fill) 0 var(--x), var(--fillbg) 0 var(--x));
+    block-size: 100%;
+    mask:initial;
+    -moz-mask: repeat left center/var(--starsize) var(--symbol);
+  }
+  .rating::-moz-slider-thumb {
+    height: var(--starsize);
+    opacity: 0;
+    width: var(--starsize);
+    -moz-appearance: none;
+  }
+  
+  .rating, .rating-label {
+    display: block;
+  }
+  .rating-label {
+    margin-block-end: 1rem;
+  }
+  
+/****************************************
+Error Styles for Assignmnet 2
+*****************************************/
+span.error {
+    background-color: rgb(46, 21, 59);
+    color: var(--decorative);
+    border-radius: 0.2rem;
+    padding: 0.2rem 0.2rem;
+  }
+  
+span.hidden {
+    display: none; /* make it disappear */
+  }
+
+/****************************************
+Modal class Assignment 3
+*****************************************/
+.modal{
+    display: none;
+}
+
+#mods{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color:rgb(61, 19, 58);
+    height: 35rem;
+    width: 50rem;
+    border-radius: 1rem;
+
+}
