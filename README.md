@@ -1,6 +1,5 @@
 # Movie-Library
 ## Description
-Full-stack website made over the length of the Web Development (COIS-3420) course at Trent University.
 This website used HTML, CSS, JavaScript to create and style the site. We used PHP to access, traverse, and manipulate an SQL database using queries with user inputted data. The site is fully functional, with a login, account creation, password reset, sticky input fields which users could dynamically update information, and more. The site also included some interactive features such as a word count that changes with each word typed, modal pop up, and collapsing navigation.
 ## Code
 ### Pages
